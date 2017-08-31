@@ -12,6 +12,6 @@
         "body-parser": "*",
         "nodemailer": "*"
     },
-    "author": "wmnitin",
+    "author": "",
     "license": "ISC"
 }

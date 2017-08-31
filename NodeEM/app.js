@@ -12,7 +12,7 @@ var sendmailnow = require('./models/sendmailnow.js');
 
 var Crypto = require('crypto');
 
-mongoose.connect('mongodb://wmnitin:Nitin@123@ds011745.mlab.com:11745/extrameal');
+mongoose.connect('');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -31,7 +31,7 @@ router.use(function(req, res, next) {
 
 
 router.get('/', function(req, res) {
-    res.json({ message: "Hello dude Nitinnn" });
+    res.json({ message: "Hello" });
 });
 
 router.route('/shops')

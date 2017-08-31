@@ -3,7 +3,7 @@ var transporter = nodemailer.createTransport({
     service: 'Mailgun',
     auth: {
         user: 'spider.dark.web@gmail.com',
-        pass: 'anonymous'
+        pass: ''
     }
 });
 

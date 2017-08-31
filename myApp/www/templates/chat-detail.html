@@ -1,0 +1,70 @@
+<ion-view view-title="Order">
+  <ion-content class="padding">
+	
+	<div style="background-image: url({{image}});height: 200px;background-size: cover;background-position-x: 50%;background-position-y: 50%; margin:-10px" >
+	</div>
+	
+	<div class="" ng-show="!first" style="
+    height: 165px;
+    display: block;
+    border-color: #b2b2b2;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%);
+    color: white;
+    margin-top: -150px;">
+	<h1 class="" style=" text-align: center;color:white">{{shopdetails.shop_name}}</h1>
+	<p style="text-align:center" class="ion-android-restaurant">{{shopdetails.shop_address}}</p>
+	<p style="text-align:center" class="ion-android-bicycle"> Free Delivery in 45 to 60 mins</p>
+	<p style="text-align:center" class="" ng-if="shopdetails.shop_nonveg == 0 ">Serves Vegetarian Only</p>
+	<p style="text-align:center" class="" ng-if="shopdetails.shop_nonveg == 1 ">Serves Non Vegetarian Only</p>
+	<p style="text-align:center" class="" ng-if="shopdetails.shop_nonveg == 2 ">Serves Veg & Non Veg</p>
+	</div>
+	<br/>
+	
+	<div class="item item-text-wrap" ng-show="!loggedin">
+		<center>Please <span ng-click="login()"><b><u>Login</u></b></span> or <span ng-click="register()"><b><u>Register</u></b></span> to view menu & order</center>
+	</div>
+
+	<div class="item item-text-wrap" ng-show="loggedin">
+		<center>Call {{shopdetails.shop_name}} now & order meals showing below.</center><br>
+		 <center><a class="button button-positive icon ion-android-call" ng-href="tel: +91{{shopdetails.shop_number}}"> Call {{shopdetails.shop_name}}</a></center>
+		 <br><center class="ion-android-alarm-clock"> Timing : 9:00 AM to 11:00 PM, Everyday</center>
+
+	<div class="card" style="font-size: -webkit-xxx-large;">
+	<div class="item item-divider">
+		Menu:
+	  </div>
+	  <div ng-repeat="dtl in menudata">
+	  <div class="item item-text-wrap">
+		{{$index+1}}. <b>{{dtl.menu_name}}</b> ({{dtl.menu_desc}}) - <b>Rs {{dtl.menu_price}}</b>
+	  </div>
+	  </div>
+
+	<div class="item item-divider">
+		{{shopdetails.shop_name}} deserves:
+	  </div>
+		<center style="color:darkorange">
+		<span class="ion-ios-star-outline" ng-click="testing(1)" ng-show="rating < 1"></span>
+		<span class="ion-ios-star" ng-click="testing(1)" ng-show="rating > 0"></span>
+
+		<span class="ion-ios-star-outline" ng-click="testing(2)" ng-show="rating < 2"></span>
+		<span class="ion-ios-star" ng-click="testing(2)" ng-show="rating > 1"></span>
+
+		<span class="ion-ios-star-outline" ng-click="testing(3)" ng-show="rating < 3"></span>
+		<span class="ion-ios-star" ng-click="testing(3)" ng-show="rating > 2"></span>
+
+		<span class="ion-ios-star-outline" ng-click="testing(4)" ng-show="rating < 4"></span>
+		<span class="ion-ios-star" ng-click="testing(4)" ng-show="rating > 3"></span>
+
+		<span class="ion-ios-star-outline" ng-click="testing(5)" ng-show="rating < 5"></span>
+		<span class="ion-ios-star" ng-click="testing(5)" ng-show="rating > 4"></span>
+		</center>
+	</div>
+
+	</div>
+	
+	<div class="card">
+	  
+	</div>
+	 
+  </ion-content>
+</ion-view>

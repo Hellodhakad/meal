@@ -1,0 +1,27 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Manage Profile</h1>
+	<div class="buttons">
+      <button class="button button-clear" ng-click="closeProfile()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+	<div class="card" >
+	<span style="text-align: center;display: block;font-size: 160px;" class="ion-android-person"></span>
+		<div class="item" >
+		Name : {{profile.name}}
+		</div>
+		<div class="item" >
+		Email : {{profile.email}}
+		</div>
+		<div class="item" >
+		Number : {{profile.number}}
+		</div>
+	</div>
+
+	<div class="item">
+		<center>Profile updation will be available in next update.</center>
+	</div>
+	
+  </ion-content>
+</ion-view>

@@ -1,0 +1,66 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+		<ion-header-bar class="bar-stable bar bar-header" style="
+    height: 200px;
+    display: block;
+    border-color: #b2b2b2;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+    color: #444;
+    ">
+  <h1 class="" style="
+    text-align: center;
+    "> E<span class="ion-android-restaurant"></span>TRA<span style="
+    color: #FF5722;
+">MEAL</span></h1>
+ 
+  <p class="ion-android-restaurant" style="
+    font-size: 100px;
+    text-align: center;
+    "></p><h5 style="
+    text-align: center;
+    ">Free Home / Office Delivery</h5>
+  
+  </ion-header-bar>
+  
+  
+    <ion-content style="margin-top: 154px;">
+      <ion-list>
+		<ion-item menu-close href="#/">
+          <span class="icon ion-android-restaurant" > Order your Meal</span>
+        </ion-item>
+        <ion-item menu-close class="icon ion-android-person-add" ng-show="!loggedin" ng-click="register()">
+          Register
+        </ion-item>
+		<ion-item menu-close class="icon ion-android-contact" ng-show="!loggedin" ng-click="login()">
+          Login
+        </ion-item>
+		<ion-item menu-close href="#/app/showorder" ng-show="loggedin">
+          <span class="icon ion-ios-cart"> Your Orders</span>
+        </ion-item>
+		<ion-item menu-close href="#/app/profile" ng-show="loggedin">
+          <span class="icon ion-android-contact"> Your Profile</span>
+        </ion-item>
+		<ion-item menu-close href="#/app/contact" >
+          <span class="icon ion-android-mail"> Contact Us</span>
+        </ion-item>
+		<ion-item menu-close ng-show="loggedin">
+          <span ng-click="logout()" class="icon ion-android-alert"> Logout</span>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

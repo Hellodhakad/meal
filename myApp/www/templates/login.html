@@ -1,0 +1,35 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Login</h1>
+	<div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form name="loginForm" ng-submit="loginForm.$valid && doLogin(loginData)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label icon ion-android-mail"> Email :</span>
+          <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" name="email" ng-model="loginData.email" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label icon ion-android-unlock"> Password :</span>
+          <input type="password" name="password" ng-model="loginData.password" required>
+        </label>
+
+        <label class="item assertive" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+          Email needs to be valid
+        </label>
+        <label class="item assertive" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+          Password is required
+        </label>
+
+        <label class="item">
+          <button class="button button-block button-positive icon ion-android-contact" type="submit"> Log in</button>
+        </label>
+      </div>
+    </form>
+	
+  </ion-content>
+</ion-modal-view>
+

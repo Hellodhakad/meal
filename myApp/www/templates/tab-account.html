@@ -1,0 +1,25 @@
+<ion-view view-title="Account">
+  <ion-content>
+  
+  <span style="text-align: center;display: block;font-size: 160px;" class="ion-happy-outline"></span>
+	
+	<ion-list>
+        <ion-item menu-close class="icon ion-android-person-add" ng-show="!loggedin" ng-click="register()">
+          Register
+        </ion-item>
+		<ion-item menu-close class="icon ion-android-contact" ng-show="!loggedin" ng-click="login()">
+          Login
+        </ion-item>
+		<ion-item menu-close ng-click="profilemo()" ng-show="loggedin">
+          <span class="icon ion-android-contact"> Your Profile</span>
+        </ion-item>
+		<ion-item menu-close  ng-click="contact()" >
+          <span class="icon ion-android-mail"> Contact Us</span>
+        </ion-item>
+		<ion-item menu-close ng-click="logout()" ng-show="loggedin">
+          <span  class="icon ion-android-alert"> Logout</span>
+        </ion-item>
+    </ion-list>
+  
+  </ion-content>
+</ion-view>

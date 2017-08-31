@@ -1,0 +1,46 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Register</h1>
+	<div class="buttons">
+      <button class="button button-clear" ng-click="closeRegister()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form name="regForm" ng-submit="regForm.$valid && doRegister(regData)" >
+      <div class="list">
+		    <label class="item item-input">
+          <span class="input-label icon ion-android-chat"> Name :</span>
+          <input type="text" name="name" ng-model="regData.name" required/>
+        </label>
+        <label class="item item-input">
+          <span class="input-label icon ion-android-mail"> Email :</span>
+          <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" name="email" ng-model="regData.email" required=""/>
+        </label>       
+        <label class="item item-input">
+          <span class="input-label icon ion-android-unlock"> Password :</span>
+          <input type="password" name="password" ng-model="regData.password" required=""/>
+        </label>
+        <label class="item item-input">
+          <span class="input-label icon ion-android-call"> Number :</span>
+          <input type="text" pattern="[789][0-9]{9}" ng-model="regData.number" name="mobile" required=""/>
+        </label>
+        <label class="item assertive" ng-show="regForm.name.$dirty && regForm.name.$invalid">
+          Name is required
+        </label>
+        <label class="item assertive" ng-show="regForm.email.$dirty && regForm.email.$invalid">
+          Email needs to be valid
+        </label>
+        <label class="item assertive" ng-show="regForm.password.$dirty && regForm.password.$invalid">
+          Password is required
+        </label>
+        <label class="item assertive" ng-show="regForm.mobile.$dirty && regForm.mobile.$invalid">
+          Mobile number should be valid & of 10 digits
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive icon ion-android-person-add" type="submit"> Register</button>
+        </label>
+      </div>
+    </form>
+	
+  </ion-content>
+</ion-modal-view>

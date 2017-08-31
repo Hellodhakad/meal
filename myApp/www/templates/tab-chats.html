@@ -1,0 +1,30 @@
+<ion-view view-title="{{dbarea}}, {{dbcity}} ">
+  <ion-content>
+    <ion-list>
+	
+	<div class="list">
+	<div ng-repeat="shp in shops">
+    <a class="item item-thumbnail-left" href="#/tab/chats/{{shp._id}}">
+	
+		<span class="ion-android-restaurant" style="
+		float: left;
+		margin-left: -100px;
+		font-size: 70px;
+		padding-left: 15px;
+		padding-top: 10px;
+		"></span>
+      <h2>{{shp.shop_name}}</h2>
+      <p class="ion-android-home"> {{shp.shop_address}}</p>
+	  <p ng-if="shp.shop_nonveg == 0 "> Vegetarian</p>
+	  <p ng-if="shp.shop_nonveg == 1 "> Non Vegetarian</p>
+	  <p ng-if="shp.shop_nonveg == 2 "> Veg & Non-Veg</p>
+	  <p class="ion-android-bicycle"> Delivers in 45min</p>
+    </a>
+	</div>
+	</div>
+	
+	{{error}}
+	
+    </ion-list>
+  </ion-content>
+</ion-view>

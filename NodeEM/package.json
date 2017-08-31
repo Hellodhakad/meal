@@ -1,0 +1,17 @@
+{
+    "name": "extrameal",
+    "version": "1.0.0",
+    "description": "Api for EM",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "*",
+        "mongoose": "*",
+        "body-parser": "*",
+        "nodemailer": "*"
+    },
+    "author": "wmnitin",
+    "license": "ISC"
+}
